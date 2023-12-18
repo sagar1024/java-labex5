@@ -7,13 +7,13 @@ public class Main {
         for (int i = 0; i < transactionAmounts.length; i++) {
             FinancialTask financialTask = new FinancialTask(transactionAmounts[i]);
             threads[i] = new Thread(financialTask);
-            threads[i].start(); // Start each thread
+            threads[i].start(); // Starting each thread
         }
 
-        // Join threads to wait for their completion
+        // Joining the threads to wait for their completion
         for (Thread thread : threads) {
             try {
-                thread.join(); // Wait for each thread to complete
+                thread.join(); // Waiting for each thread to complete
             } catch (InterruptedException e) {
                 System.out.println("Thread interrupted while waiting: " + e.getMessage());
             }
